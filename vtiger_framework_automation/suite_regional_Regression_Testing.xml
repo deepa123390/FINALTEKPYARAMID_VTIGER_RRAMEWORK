@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<listeners>
+<listener class-name="com.comcast.Listener_utility.ListenerImplementation"/>
+</listeners>
+	<test thread-count="2" name="Test">
+		<classes>
+			<class name="create_org.CreateOrg_Test">
+				<methods>
+					<include name="createOrg_test"/>
+				</methods>
+			</class>
+
+			<class name="create_contact_vtiger.CreateContact_Test">
+				<methods>
+					<include name="createContactwithOrgIntegration_test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite> 
