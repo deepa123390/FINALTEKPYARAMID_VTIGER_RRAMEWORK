@@ -7,17 +7,28 @@
   <test thread-count="5" name="Test(failed)">
     <groups>
       <run>
-        <include name="regression"/>
+        <include name="smoke"/>
       </run>
     </groups>
     <classes>
+      <class name="create_org.CreateOrg_Test">
+        <methods>
+          <include name="createOrg_test"/>
+          <include name="configAM"/>
+          <include name="configBM"/>
+          <include name="configBC"/>
+          <include name="configBS"/>
+          <include name="configAC"/>
+          <include name="configAS"/>
+        </methods>
+      </class> <!-- create_org.CreateOrg_Test -->
       <class name="create_contact_vtiger.CreateContact_Test">
         <methods>
           <include name="configAM"/>
           <include name="configBM"/>
           <include name="configBC"/>
           <include name="configBS"/>
-          <include name="createContactWithSupportDate_test"/>
+          <include name="createContact"/>
           <include name="configAC"/>
           <include name="configAS"/>
         </methods>

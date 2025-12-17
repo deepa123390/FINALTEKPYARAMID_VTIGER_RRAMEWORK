@@ -1,6 +1,7 @@
 package com.comcast.crm.utility.baseclass;
 import java.io.IOException;
 
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -39,15 +40,17 @@ public class BaseClass {
 	 
 	@BeforeSuite(groups= {"smoke","regression"})
 	public void configBS() {
-		UtilityClassObject.getTest().log(Status.INFO, "DATABASE CONNECTION");
+		//UtilityClassObject.getTest().log(Status.INFO, "DATABASE CONNECTION");
 	}
 	//@Parameters("browser")
 	@BeforeClass(groups= {"smoke","regression"})
-	public void configBC() throws IOException {
+	public void configBC() throws IOException, ParseException {
 		
 		//String BROWSER=browser;
 		
 		String BROWSER=fil.getDatafromPropertiesFile("browser");
+		//String BROWSER=System.getProperty("browser",fil.getDataFromJsonFile("browser"));
+		System.out.println(BROWSER);
 		if(BROWSER.equals("chrome"))
 		driver=new ChromeDriver();
 		else if(BROWSER.equals("edge"))
@@ -62,6 +65,8 @@ public class BaseClass {
 		
 		
 	}
+	
+	
 	@BeforeMethod(groups= {"smoke","regression"})
 	public void configBM() throws IOException {
 		wlib.waitForPagetoLoad(driver);
