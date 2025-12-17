@@ -86,7 +86,7 @@ public class CreateContact_Test extends BaseClass {
 		UtilityClassObject.getTest().log(Status.INFO, "START DATE VALIDATED");
 
 		String actEndDate = ContactInformationPage.getactualEndDateInfo().getText();
-		// actEndDate=actEndDate.trim();
+		actEndDate=actEndDate.trim();
 		Assert.assertEquals(actEndDate, enddate);
 		UtilityClassObject.getTest().log(Status.INFO, "END DATE VALIDATED");
 
