@@ -88,7 +88,7 @@ public class BaseClass {
 	@AfterClass(groups= {"smoke","regression"})
 	public void configAC() {
 		UtilityClassObject.getTest().log(Status.INFO, "CLOSE BROWSER");
-		driver.close();
+		//driver.close();
 	}
 	@AfterSuite(groups= {"smoke","regression"})
 	public void configAS() {
